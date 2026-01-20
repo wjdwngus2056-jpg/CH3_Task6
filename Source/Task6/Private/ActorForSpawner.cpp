@@ -38,5 +38,5 @@ void AActorForSpawner::RandomizeSpawnLocation(int DistanceParam)
 {
     int32 LocationZ = FMath::RandRange(100.f, 300.f);
 
-    SpawnLocation = FVector(0.f, DistanceParam * 100.f, LocationZ);
+    SpawnLocation = FVector(0.f, DistanceParam * 200.f, LocationZ);
 }
