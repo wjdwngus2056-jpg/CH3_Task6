@@ -15,6 +15,7 @@ public:
 protected:
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
+	virtual void RotateActor(float DeltaTime);
 
 protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "MovingActor|Components")
@@ -22,4 +23,8 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "MovingActor|Components")
 	TObjectPtr<UStaticMeshComponent> StaticMeshComp;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MovingActor|Properties")
+	int32 RotationSpeed;
+
+	int32 RotationMode;
 };

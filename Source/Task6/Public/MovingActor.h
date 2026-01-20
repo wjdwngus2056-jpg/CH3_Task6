@@ -15,6 +15,7 @@ public:
 protected:
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
+	virtual void MoveActor(float DeltaTime);
 
 protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "MovingActor|Components")
@@ -22,6 +23,7 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "MovingActor|Components")
 	TObjectPtr<UStaticMeshComponent> StaticMeshComp;
 
-	int32 MovementSpeed;
-	int32 MovementDistance;
+	float MovementSpeed;
+	float MovementDistance;
+	FVector StartLocation;
 };
