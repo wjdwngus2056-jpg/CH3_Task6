@@ -4,7 +4,7 @@
 
 AActorForSpawner::AActorForSpawner()
 {
-	PrimaryActorTick.bCanEverTick = true;
+	PrimaryActorTick.bCanEverTick = false;
     SpawnLocation = FVector::ZeroVector;
 	NumberOfActorsToSpawn = 5;
 }

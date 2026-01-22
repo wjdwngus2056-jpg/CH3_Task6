@@ -7,7 +7,7 @@
 
 ATaskCharacter::ATaskCharacter()
 {
-	PrimaryActorTick.bCanEverTick = true;
+	PrimaryActorTick.bCanEverTick = false;
 
 	SpringArmComp = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArm"));
 	SpringArmComp->SetupAttachment(RootComponent);
