@@ -70,14 +70,14 @@ void ATaskCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 	}
 }
 
-void ATaskCharacter::Move(const FInputActionValue& value)
+void ATaskCharacter::Move(const FInputActionValue& Value)
 {
 	if (!Controller)
 	{
 		return;
 	}
 
-	const FVector2D MoveInput = value.Get<FVector2D>();
+	const FVector2D MoveInput = Value.Get<FVector2D>();
 
 	if (!FMath::IsNearlyZero(MoveInput.X))
 	{
@@ -89,25 +89,25 @@ void ATaskCharacter::Move(const FInputActionValue& value)
 	}
 }
 
-void ATaskCharacter::StartJump(const FInputActionValue& value)
+void ATaskCharacter::StartJump(const FInputActionValue& Value)
 {
-	if (value.Get<bool>())
+	if (Value.Get<bool>())
 	{
 		Jump();
 	}
 }
 
-void ATaskCharacter::StopJump(const FInputActionValue& value)
+void ATaskCharacter::StopJump(const FInputActionValue& Value)
 {
-	if (!value.Get<bool>())
+	if (!Value.Get<bool>())
 	{
 		StopJumping();
 	}
 }
 
-void ATaskCharacter::Look(const FInputActionValue& value)
+void ATaskCharacter::Look(const FInputActionValue& Value)
 {
-	FVector2D LookInput = value.Get<FVector2D>();
+	FVector2D LookInput = Value.Get<FVector2D>();
 
 	AddControllerYawInput(LookInput.X);
 	AddControllerPitchInput(LookInput.Y);

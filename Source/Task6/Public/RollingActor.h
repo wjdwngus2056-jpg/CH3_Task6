@@ -4,6 +4,8 @@
 #include "GameFramework/Actor.h"
 #include "RollingActor.generated.h"
 
+class UBoxComponent;
+
 UCLASS()
 class TASK6_API ARollingActor : public AActor
 {
@@ -23,6 +25,10 @@ protected:
 	TObjectPtr<USceneComponent> SceneRoot;
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "RollingActor|Components")
     TObjectPtr<UStaticMeshComponent> StaticMeshComp;
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "RollingActor||Components")
+	TObjectPtr<UBoxComponent> BoxComp;
+
+
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "RollingActor|Properties")
 	float ActorSpeed;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "RollingActor|Properties")

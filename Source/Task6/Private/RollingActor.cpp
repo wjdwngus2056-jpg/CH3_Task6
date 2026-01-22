@@ -1,4 +1,5 @@
 ﻿#include "RollingActor.h"
+#include "Components/BoxComponent.h"
 
 ARollingActor::ARollingActor()
 {
@@ -8,6 +9,8 @@ ARollingActor::ARollingActor()
     RootComponent = SceneRoot;
     StaticMeshComp = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("StaticMeshComp"));
     StaticMeshComp->SetupAttachment(SceneRoot);
+    BoxComp = CreateDefaultSubobject<UBoxComponent>(TEXT("BoxComp"));
+    BoxComp->SetupAttachment(SceneRoot);
 
     ActorSpeed = 100.f;
     RollingSpeed = 90.f;
@@ -26,6 +29,7 @@ void ARollingActor::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
     RollActor(DeltaTime);
+
 }
 
 void ARollingActor::RollActor(float DeltaTime)
@@ -37,7 +41,7 @@ void ARollingActor::RollActor(float DeltaTime)
         AddActorWorldRotation(FRotator(-RollingSpeed * DeltaTime, 0.f, 0.f));
         break;
     case 2:
-        AddActorWorldOffset(FVector(0.f, 0.f, ActorSpeed * DeltaTime));
+        AddActorWorldOffset(FVector(0.f, -ActorSpeed * DeltaTime, 0.f));
         AddActorWorldRotation(FRotator(0.f, 0.f, -RollingSpeed * DeltaTime));
         break;
     case 3:
@@ -45,7 +49,7 @@ void ARollingActor::RollActor(float DeltaTime)
         AddActorWorldRotation(FRotator(RollingSpeed * DeltaTime, 0.f, 0.f));
         break;
     case 4:
-        AddActorWorldOffset(FVector(0.f, 0.f, -ActorSpeed * DeltaTime));
+        AddActorWorldOffset(FVector(0.f, ActorSpeed * DeltaTime, 0.f));
         AddActorWorldRotation(FRotator(0.f, 0.f, RollingSpeed * DeltaTime));
         break;
     }

@@ -26,13 +26,13 @@ protected:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	UFUNCTION()
-	void Move(const FInputActionValue& value);
+	void Move(const FInputActionValue& Value);
 	UFUNCTION()
-	void StartJump(const FInputActionValue& value);
+	void StartJump(const FInputActionValue& Value);
 	UFUNCTION()
-    void StopJump(const FInputActionValue& value);
+    void StopJump(const FInputActionValue& Value);
 	UFUNCTION()
-    void Look(const FInputActionValue& value);
+    void Look(const FInputActionValue& Value);
 
 protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Movement")

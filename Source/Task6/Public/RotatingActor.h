@@ -25,6 +25,5 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MovingActor|Properties")
 	int32 RotationSpeed;
-
 	int32 RotationMode;
 };

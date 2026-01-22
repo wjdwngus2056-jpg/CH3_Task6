@@ -24,5 +24,6 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Input")
 	TObjectPtr<UInputAction> LookAction;
 
+protected:
 	virtual void BeginPlay() override;
 };
